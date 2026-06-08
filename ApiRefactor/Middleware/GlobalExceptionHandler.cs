@@ -24,6 +24,7 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
 
         var problemDetails = exception switch
         {
+
             KeyNotFoundException ex => new ProblemDetails
             {
                 Title = "Resource Not Found",

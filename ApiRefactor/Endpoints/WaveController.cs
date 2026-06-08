@@ -1,10 +1,12 @@
 ﻿using ApiRefactor.DTO;
 using ApiRefactor.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace ApiRefactor.Endpoints
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class WaveController : ControllerBase
 
     {
@@ -18,6 +20,8 @@ namespace ApiRefactor.Endpoints
         }
 
         [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll(
             [FromQuery] int pageNumber = 1,
             [FromQuery] int pageSize = 10,
@@ -28,6 +32,8 @@ namespace ApiRefactor.Endpoints
         }
 
         [HttpGet("{id:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
         {
             var result = await _waveService.GetByIdAsync(id, cancellationToken);
@@ -35,6 +41,9 @@ namespace ApiRefactor.Endpoints
         }
 
         [HttpPost]
+        [Authorize(Policy = "CanWriteWaves")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create(
             [FromBody] WaveCreateRequestDto request,
             CancellationToken cancellationToken)
@@ -48,6 +57,9 @@ namespace ApiRefactor.Endpoints
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Policy = "CanWriteWaves")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Update(
             Guid id,
             [FromBody] WaveUpdateRequestDto request,
