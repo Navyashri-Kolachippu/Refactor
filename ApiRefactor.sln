@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11811.120 insiders
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRefactor", "ApiRefactor\ApiRefactor.csproj", "{452EC2CC-C614-41F1-8C5A-0BA15E521403}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiRefactorTests", "ApiRefactorTests", "{B6CD77F6-3E1B-43FD-9DC0-55511A21C3AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRefactorTest", "ApiRefactorTest\ApiRefactorTest.csproj", "{F55126E6-A0BE-44E2-AA31-FAEBF6E39534}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452EC2CC-C614-41F1-8C5A-0BA15E521403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452EC2CC-C614-41F1-8C5A-0BA15E521403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452EC2CC-C614-41F1-8C5A-0BA15E521403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452EC2CC-C614-41F1-8C5A-0BA15E521403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55126E6-A0BE-44E2-AA31-FAEBF6E39534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55126E6-A0BE-44E2-AA31-FAEBF6E39534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55126E6-A0BE-44E2-AA31-FAEBF6E39534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55126E6-A0BE-44E2-AA31-FAEBF6E39534}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F55126E6-A0BE-44E2-AA31-FAEBF6E39534} = {B6CD77F6-3E1B-43FD-9DC0-55511A21C3AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {487B49BF-B647-4A69-A6B3-5C4E2FB88DF8}
+	EndGlobalSection
+EndGlobal
